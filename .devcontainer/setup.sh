@@ -1,6 +1,7 @@
 #!/bin/bash
 
 set -x
+minikube start --apiserver-ips=192.168.49.2
 kubectl create namespace argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 
