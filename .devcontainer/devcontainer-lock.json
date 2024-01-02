@@ -1,0 +1,24 @@
+{
+  "features": {
+    "ghcr.io/devcontainers-contrib/features/argo-cd:1": {
+      "version": "1.0.2",
+      "resolved": "ghcr.io/devcontainers-contrib/features/argo-cd@sha256:9baac2d201e56a2a6e90bd155abdc72f85c750f168b75508c8f2b66a7643a9be",
+      "integrity": "sha256:9baac2d201e56a2a6e90bd155abdc72f85c750f168b75508c8f2b66a7643a9be"
+    },
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "version": "2.7.1",
+      "resolved": "ghcr.io/devcontainers/features/docker-in-docker@sha256:f6a73ee06601d703db7d95d03e415cab229e78df92bb5002e8559bcfc047fec6",
+      "integrity": "sha256:f6a73ee06601d703db7d95d03e415cab229e78df92bb5002e8559bcfc047fec6"
+    },
+    "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {
+      "version": "1.1.5",
+      "resolved": "ghcr.io/devcontainers/features/kubectl-helm-minikube@sha256:23aca9dfe058b498b4d7fa2d5592c75b1ff06e581b950419a56e19568d8ecaf7",
+      "integrity": "sha256:23aca9dfe058b498b4d7fa2d5592c75b1ff06e581b950419a56e19568d8ecaf7"
+    },
+    "ghcr.io/rio/features/k9s": {
+      "version": "1.1.5",
+      "resolved": "ghcr.io/rio/features/k9s@sha256:f9aa88374f4b13c06d9fc3626e8ea9db12e6975c5afc0e23fba8fdee59f03f53",
+      "integrity": "sha256:f9aa88374f4b13c06d9fc3626e8ea9db12e6975c5afc0e23fba8fdee59f03f53"
+    }
+  }
+}

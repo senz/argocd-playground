@@ -1,0 +1,49 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/kubernetes-helm-minikube
+{
+	"name": "ArgoCD Playground",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "mcr.microsoft.com/devcontainers/base:bullseye",
+	"features": {
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {
+			"enableNonRootDocker": "true",
+			"moby": "true"
+		},
+		"ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {
+			"version": "latest",
+			"helm": "latest",
+			"minikube": "latest"
+		},
+		"ghcr.io/devcontainers-contrib/features/argo-cd:1": {},
+		"ghcr.io/rio/features/k9s": {},
+	},
+
+	"remoteEnv": {
+		"REPO_URL": "https://github.com/sidd-harth/gitops-argocd.git",
+	},
+
+	"hostRequirements": {
+		"memory": "16gb",
+		"storage": "8gb"
+	},
+
+	"mounts": [
+		{"source": "gitea-base", "target": "/opt/gitea", "type": "volume"}
+	],
+	
+	"forwardPorts": [
+		"192.168.49.2:31283",
+	],
+
+	"portsAttributes": {
+		"31283": {
+			"label": "Application",
+			"onAutoForward": "notify",
+			"protocol": "https"
+		}
+	},
+
+	"postCreateCommand": ".devcontainer/setup.sh",
+	"postStartCommand": "git config --global --add safe.directory '*'; minikube start --apiserver-ips=192.168.49.2",
+	"postAttachCommand": "kubectl port-forward svc/argocd-server -n argocd 8080:443"
+}
