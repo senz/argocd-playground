@@ -31,9 +31,6 @@ export ADMIN_TOKEN="$(cat /opt/gitea/admin-token)"
 
 timeout 100s bash -c 'until curl -s -o /dev/null http://localhost:3000; do sleep 3 ; done'
 
-curl -v -H "Content-Type: application/json" \
-    -H "Authorization: token $ADMIN_TOKEN" \
-    -d "{\"clone_addr\":\"$REPO_URL\",\"repo_name\":\"repo\"}" \
-    http://localhost:3000/api/v1/repos/migrate
+./scripts/gitea-import.sh $REPO_URL repo
 
 echo use http://host.minikube.internal:3000/ to reach gitea from argocd
