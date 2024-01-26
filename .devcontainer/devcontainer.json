@@ -45,5 +45,5 @@
 
 	"postCreateCommand": ".devcontainer/setup.sh",
 	"postStartCommand": "git config --global --add safe.directory '*'; minikube start --apiserver-ips=192.168.49.2",
-	"postAttachCommand": "kubectl port-forward svc/argocd-server -n argocd 8080:443"
+	//"postAttachCommand": "kubectl port-forward svc/argocd-server -n argocd 8080:443"
 }
